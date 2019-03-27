@@ -11,7 +11,7 @@
         private readonly string _pattern;
         private List<HelixModuleInfo> _modules;
 
-        public HelixModuleProvider(IDataSourceLocation dataSourceLocation,string pattern)
+        public HelixModuleProvider(IDataSourceLocation dataSourceLocation, string pattern)
         {
             _dataSourceLocation = dataSourceLocation;
             _pattern = pattern;
@@ -34,10 +34,10 @@
 
         public HelixModuleInfo GetModuleLayerByPath(string path)
         {
-            string layer = "";
-            string module = "";
-            var patternPath = _pattern.ToLower().Replace("$configpath", String.Empty).Split(new[] { '\\' }).ToList();
-            var relativePath = path.Replace(_dataSourceLocation.DataSourceLocation, String.Empty).Split(new[] {'\\'}).ToList();
+            var layer = "";
+            var module = "";
+            var patternPath = _pattern.ToLower().Replace("$configpath", string.Empty).Split('\\').ToList();
+            var relativePath = path.Replace(_dataSourceLocation.DataSourceLocation, string.Empty).Split('\\').ToList();
             var indexOfLayer = patternPath.IndexOf("$layer");
             var indexOfModule = patternPath.IndexOf("$module");
             if (relativePath.Count > indexOfLayer)

@@ -2,7 +2,7 @@
 {
     public interface IHelixAnalyzer
     {
-        IAnalyzeResult Analyze();
         string Name { get; }
+        IAnalyzeResult Analyze();
     }
 }

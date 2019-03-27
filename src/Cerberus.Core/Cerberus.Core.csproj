@@ -48,6 +48,7 @@
     <Compile Include="Analyzers\Rules\IRule.cs" />
     <Compile Include="Analyzers\Rules\IRuleValidationResult.cs" />
     <Compile Include="Analyzers\Rules\RuleResult.cs" />
+    <Compile Include="Analyzers\Rules\RuleResultExtension.cs" />
     <Compile Include="Analyzers\Rules\RuleValidationResult.cs" />
     <Compile Include="Analyzers\Rules\RuleWithErrorAction.cs" />
     <Compile Include="Configuration\CerberusVariablesReplacer.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Configuration\HelixModuleInfo.cs" />
     <Compile Include="Configuration\HelixModuleProvider.cs" />
     <Compile Include="Configuration\HelixPathHelper.cs" />
+    <Compile Include="Configuration\ICerberusVariablesReplacer.cs" />
     <Compile Include="Configuration\IConfiguration.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationTokenReplacer.cs" />
@@ -97,6 +99,9 @@
     <Compile Include="Diagnostics\Assert.cs" />
     <Compile Include="Diagnostics\AssertionConditionAttribute.cs" />
     <Compile Include="Diagnostics\AssertionConditionType.cs" />
+    <Compile Include="Diagnostics\AssertionMethodAttribute.cs" />
+    <Compile Include="Diagnostics\InvokerParameterNameAttribute.cs" />
+    <Compile Include="Diagnostics\ValidatedNotNullAttribute.cs" />
     <Compile Include="ILayoutReader.cs" />
     <Compile Include="IPlaceHolderReader.cs" />
     <Compile Include="IRenderingReader.cs" />

@@ -17,13 +17,13 @@
         protected IConfiguration[] InternalConfigurations;
         protected XmlElement ValidatorConfig;
 
-        public HelixConfigurationService(string configPath, IHelixModuleProvider moduleProvider,ICerberusVariablesReplacer variablesReplacer) :
+        public HelixConfigurationService(string configPath, IHelixModuleProvider moduleProvider,
+            ICerberusVariablesReplacer variablesReplacer) :
             base(
                 variablesReplacer)
         {
             ConfigPath = configPath;
             _moduleProvider = moduleProvider;
-            
         }
 
         public IConfiguration[] Configurations

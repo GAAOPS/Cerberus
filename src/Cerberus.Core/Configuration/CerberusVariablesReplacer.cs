@@ -9,6 +9,7 @@
     public class CerberusVariablesReplacer : ContainerDefinitionVariablesReplacer, ICerberusVariablesReplacer
     {
         private readonly IContainerDefinitionVariablesReplacer[] _replacerCollection;
+
         public CerberusVariablesReplacer(XmlNode configNode)
         {
             var replacerNodes = configNode.ChildNodes.OfType<XmlElement>()
@@ -20,11 +21,12 @@
             {
                 var type = XmlActivator.GetType(node);
 
-                ruleInstances.Add(XmlActivator.CreateInstance(type, node, new IContainer[] { }) as IContainerDefinitionVariablesReplacer);
+                ruleInstances.Add(
+                    XmlActivator.CreateInstance(type, node, new IContainer[] { }) as
+                        IContainerDefinitionVariablesReplacer);
             }
 
             _replacerCollection = ruleInstances.ToArray();
-
         }
 
 
@@ -35,9 +37,5 @@
                 instance.ReplaceVariables(definition);
             }
         }
-    }
-
-    public interface ICerberusVariablesReplacer : IContainerDefinitionVariablesReplacer
-    {
     }
 }

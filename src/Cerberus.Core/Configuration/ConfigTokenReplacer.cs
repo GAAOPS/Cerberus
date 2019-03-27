@@ -10,7 +10,7 @@
 
         public ConfigTokenReplacer(string configPath)
         {
-            _configPath =Path.GetFullPath(configPath);
+            _configPath = Path.GetFullPath(configPath);
         }
 
         public override void ReplaceVariables(ContainerDefinition definition)

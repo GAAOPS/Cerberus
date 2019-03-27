@@ -2,22 +2,20 @@
 {
     using System;
 
-    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Parameter)]
     public class AssertionConditionAttribute : Attribute
     {
-        private readonly AssertionConditionType _conditionType;
-
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Sitecore.AssertionConditionAttribute" /> class.
+        ///     Initializes a new instance of the <see cref="T:Sitecore.AssertionConditionAttribute" /> class.
         /// </summary>
         /// <param name="conditionType">Type of the condition.</param>
         public AssertionConditionAttribute(AssertionConditionType conditionType)
         {
-            this._conditionType = conditionType;
+            ConditionType = conditionType;
         }
 
         /// <summary>Gets the type of the condition.</summary>
         /// <value>The type of the condition.</value>
-        public AssertionConditionType ConditionType => this._conditionType;
+        public AssertionConditionType ConditionType { get; }
     }
 }
