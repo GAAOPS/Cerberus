@@ -12,7 +12,8 @@
     {
         private readonly IHelixModuleProvider _helixModuleProvider;
 
-        public RainbowTemplateReader(ISourceDataStore dataStore, IHelixModuleProvider helixModuleProvider) : base(dataStore)
+        public RainbowTemplateReader(ISourceDataStore dataStore, IHelixModuleProvider helixModuleProvider) :
+            base(dataStore)
         {
             _helixModuleProvider = helixModuleProvider;
             ReaderTemplateId.Add(TemplateGuids.Template);
@@ -51,7 +52,7 @@
             }
 
             var moduleInfo = _helixModuleProvider.GetModuleLayerByPath(currentItem.SerializedItemId);
-            var result = TemplateFactory.Create(currentItem,moduleInfo);
+            var result = TemplateFactory.Create(currentItem, moduleInfo);
 
             return result;
         }

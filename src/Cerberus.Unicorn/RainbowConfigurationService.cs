@@ -13,10 +13,11 @@
 
     public class RainbowConfigurationService : HelixConfigurationService, IConfigurationProvider
     {
-        private readonly IHelixModuleProvider _helixModuleProvider;
         private readonly IDataSourceLocation _dataSourceLocation;
+        private readonly IHelixModuleProvider _helixModuleProvider;
 
-        public RainbowConfigurationService(string configPath, IHelixModuleProvider helixModuleProvider, IDataSourceLocation dataSourceLocation,
+        public RainbowConfigurationService(string configPath, IHelixModuleProvider helixModuleProvider,
+            IDataSourceLocation dataSourceLocation,
             ICerberusVariablesReplacer variablesReplacer) :
             base(configPath, helixModuleProvider, variablesReplacer)
         {
@@ -99,8 +100,8 @@
                 configuration.Register(typeof(IConfiguration),
                     () => new ReadOnlyConfiguration((IConfiguration) configuration), true);
                 configuration.Register(typeof(IConfigurationProvider), () => this, true);
-                configuration.Register(typeof(IHelixModuleProvider), () => this._helixModuleProvider, true);
-                configuration.Register(typeof(IDataSourceLocation), () => this._dataSourceLocation, true);
+                configuration.Register(typeof(IHelixModuleProvider), () => _helixModuleProvider, true);
+                configuration.Register(typeof(IDataSourceLocation), () => _dataSourceLocation, true);
             }
 
             InternalConfigurations = configurations

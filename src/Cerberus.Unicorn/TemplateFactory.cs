@@ -38,7 +38,7 @@
                         string.Empty)),
                 Name = item.Name,
                 Path = item.Path,
-                HelixModuleInfo= moduleInfo
+                HelixModuleInfo = moduleInfo
             };
             template.Fields = GetTemplateFields(item, template);
 
