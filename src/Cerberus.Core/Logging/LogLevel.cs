@@ -1,0 +1,11 @@
+﻿namespace Sitecore.Helix.Validator.Common.Logging
+{
+    public enum LogLevel
+    {
+        Information = 0,
+        Warning = 1,
+        Error = 2,
+        Debug = 3,
+        None = 4
+    }
+}
