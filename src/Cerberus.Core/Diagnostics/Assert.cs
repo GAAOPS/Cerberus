@@ -15,19 +15,9 @@
                 return;
             }
 
-            if (argument == null)
-            {
-                if (argumentName != null)
-                {
-                    throw new ArgumentNullException(argumentName, "Null is not allowed.");
-                }
-
-                throw new ArgumentNullException(nameof(argument),"Null is not allowed");
-            }
-
             if (argumentName != null)
             {
-                throw new ArgumentException("Empty strings are not allowed.", argumentName);
+                throw new ArgumentNullException(argumentName, "Null is not allowed.");
             }
 
             throw new ArgumentException("Empty strings are not allowed.");
@@ -48,7 +38,6 @@
             }
 
             throw new ArgumentNullException(nameof(argument), "Null is not allowed");
-
         }
 
         [AssertionMethod]
