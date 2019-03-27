@@ -3,7 +3,7 @@
     using System;
     using System.ComponentModel;
 
-    public class Assert
+    public static class Assert
     {
         [AssertionMethod]
         public static void ArgumentNotNullOrEmpty(
@@ -19,10 +19,10 @@
             {
                 if (argumentName != null)
                 {
-                    throw new ArgumentNullException(argumentName, "Null ids are not allowed.");
+                    throw new ArgumentNullException(argumentName, "Null is not allowed.");
                 }
 
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(argument),"Null is not allowed");
             }
 
             if (argumentName != null)
@@ -47,7 +47,8 @@
                 throw new ArgumentNullException(argumentName);
             }
 
-            throw new ArgumentNullException();
+            throw new ArgumentNullException(nameof(argument), "Null is not allowed");
+
         }
 
         [AssertionMethod]
