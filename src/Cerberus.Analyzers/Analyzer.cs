@@ -31,6 +31,7 @@
         {
             return $"{Name} {template} validated successfully.";
         }
+
         protected virtual string GetResultMessage(IDataElement template, IRule rule, IRuleValidationResult result)
         {
             return $"[{rule.GetType().Name}] {result.Message}";

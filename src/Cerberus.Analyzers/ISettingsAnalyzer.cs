@@ -2,7 +2,7 @@
 {
     using Core.Analyzers;
 
-    public interface ISettingsAnalyzer: IHelixAnalyzer
+    public interface ISettingsAnalyzer : IHelixAnalyzer
     {
     }
 }

@@ -83,6 +83,5 @@
         {
             return templates.Values.SelectMany(p => p.Select(q => q));
         }
-
     }
 }

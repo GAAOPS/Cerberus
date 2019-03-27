@@ -17,7 +17,8 @@
         private readonly IContainer _logProvider;
         private List<IHelixAnalyzer> _analyzers;
 
-        public HelixAnalyzerService(XmlNode configNode, IDataSourceLocation dataSourceLocation, ICerberusVariablesReplacer variablesReplacer) : base(
+        public HelixAnalyzerService(XmlNode configNode, IDataSourceLocation dataSourceLocation,
+            ICerberusVariablesReplacer variablesReplacer) : base(
             variablesReplacer)
         {
             _dataSourceLocation = dataSourceLocation;
@@ -36,7 +37,7 @@
                 if (type != null)
                 {
                     provider.Register(type,
-                        () => XmlActivator.CreateInstance(type, node, new[] { provider, ruleProvider, _logProvider }),
+                        () => XmlActivator.CreateInstance(type, node, new[] {provider, ruleProvider, _logProvider}),
                         true);
 
                     if (provider.Resolve(type) is IHelixAnalyzer resolve)
@@ -68,7 +69,7 @@
         private void LogResult(ILogDispatcher logger, IHelixAnalyzer helixAnalyzer, IAnalyzeResult analyzeResult)
         {
             logger.InitLogger(helixAnalyzer.Name, "");
-            foreach (IRuleValidationResult result in analyzeResult.Results)
+            foreach (var result in analyzeResult.Results)
             {
                 logger.Log(result.Message, result.Result.ToLogLevel());
             }
@@ -92,7 +93,7 @@
             {
                 var ruleType = XmlActivator.GetType(xRule);
                 var ruleProvider = CreateSingleNodeContainer(xRule, "rule");
-                ruleInstances.Add(XmlActivator.CreateInstance(ruleType, xRule, new[] { ruleProvider }) as IRule);
+                ruleInstances.Add(XmlActivator.CreateInstance(ruleType, xRule, new[] {ruleProvider}) as IRule);
             }
 
             provider.Register(typeof(IEnumerable<IRule>), () => ruleInstances, true);
@@ -120,7 +121,5 @@
 
             return GetContainer(new ContainerDefinition(document.DocumentElement));
         }
-
-
     }
 }
