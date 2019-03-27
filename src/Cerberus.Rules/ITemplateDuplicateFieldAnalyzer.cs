@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers.Rules
+﻿namespace Cerberus.Rules
 {
     public interface ITemplateDuplicateFieldAnalyzer
     {

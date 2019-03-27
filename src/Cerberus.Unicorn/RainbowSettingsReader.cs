@@ -1,11 +1,11 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Common;
-    using Common.Configuration;
-    using Common.Data;
+    using Core;
+    using Core.Configuration;
+    using Core.Data;
     using Rainbow.Model;
 
     public class RainbowSettingsReader : RainbowReader<ISetting>, ISettingsReader

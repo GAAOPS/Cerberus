@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.ValGuidator.Common.Sc
+﻿namespace Cerberus.Core.Sc
 {
     using System;
 

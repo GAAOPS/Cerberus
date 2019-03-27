@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Logging
+﻿namespace Cerberus.Core.Logging
 {
     public abstract class Logger : ILogger
     {

@@ -1,17 +1,17 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Web.Hosting;
-    using Common.Diagnostics;
+    using Core.Diagnostics;
     using Rainbow;
     using Rainbow.Formatting;
     using Rainbow.Model;
     using Rainbow.Storage;
-    using ITreeRootFactory = Common.ITreeRootFactory;
-    using TreeRoot = Common.TreeRoot;
+    using ITreeRootFactory = Core.ITreeRootFactory;
+    using TreeRoot = Core.TreeRoot;
 
     public class SerializationFileSystemDataStore : ISnapshotCapableDataStore, IDocumentable, IDisposable
     {

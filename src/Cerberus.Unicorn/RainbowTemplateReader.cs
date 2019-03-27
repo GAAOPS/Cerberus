@@ -1,12 +1,12 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Linq;
-    using Common;
-    using Common.Configuration;
-    using Common.Data;
+    using Core;
+    using Core.Configuration;
+    using Core.Data;
+    using Core.Sc;
     using Rainbow.Model;
-    using ValGuidator.Common.Sc;
 
     public class RainbowTemplateReader : RainbowReader<ITemplate>, ITemplateReader
     {

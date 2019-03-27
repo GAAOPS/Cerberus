@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Analyzers
 {
     public interface IPlaceHolderAnalyzer
     {

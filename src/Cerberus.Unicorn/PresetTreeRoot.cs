@@ -1,6 +1,6 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
-    using Common;
+    using Core;
 
     public class PresetTreeRoot : TreeRoot
     {

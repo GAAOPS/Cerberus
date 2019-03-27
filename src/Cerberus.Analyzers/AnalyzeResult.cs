@@ -1,7 +1,8 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Analyzers
 {
     using System.Collections.Generic;
-    using Rules;
+    using Core.Analyzers;
+    using Core.Analyzers.Rules;
 
     public class AnalyzeResult : IAnalyzeResult
     {

@@ -1,8 +1,8 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Common.Data;
+    using Core.Data;
     using Rainbow.Model;
 
     public static class SettingsFactory

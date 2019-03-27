@@ -1,14 +1,14 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Common;
-    using Common.Configuration;
-    using Common.Data;
     using Configy.Containers;
     using Configy.Parsing;
+    using Core;
+    using Core.Configuration;
+    using Core.Data;
     using Rainbow.Storage;
 
     public class RainbowConfigurationService : HelixConfigurationService, IConfigurationProvider

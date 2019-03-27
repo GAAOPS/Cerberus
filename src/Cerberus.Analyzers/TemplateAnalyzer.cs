@@ -1,9 +1,11 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Analyzers
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Configuration;
-    using Data;
+    using Core.Analyzers;
+    using Core.Analyzers.Rules;
+    using Core.Configuration;
+    using Core.Data;
     using Rules;
 
     public class TemplateAnalyzer : Analyzer<ITemplate>, ITemplateAnalyzer

@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     public class PredicateResult
     {

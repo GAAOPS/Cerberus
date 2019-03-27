@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +6,9 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Xml;
-    using Common;
-    using Common.Configuration;
-    using Common.Diagnostics;
+    using Core;
+    using Core.Configuration;
+    using Core.Diagnostics;
     using Rainbow.Model;
 
     public class SerializationPresetPredicate : IPredicate, ITreeRootFactory

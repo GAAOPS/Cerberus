@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Configuration
+﻿namespace Cerberus.Core.Configuration
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,6 @@
     using System.Reflection;
     using System.Xml;
     using Configy.Containers;
-    using Configy.Parsing;
 
     public static class XmlActivator
     {

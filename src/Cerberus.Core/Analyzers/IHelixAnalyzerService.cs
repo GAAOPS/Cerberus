@@ -1,6 +1,5 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Core.Analyzers
 {
-    using System.Collections.Generic;
     //TODO: Candid for move
     public interface IHelixAnalyzerService
     {

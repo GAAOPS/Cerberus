@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Diagnostics
+﻿namespace Cerberus.Core.Diagnostics
 {
     using System;
     using System.ComponentModel;

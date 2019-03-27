@@ -1,9 +1,9 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Linq;
-    using Common;
-    using Common.Data;
+    using Core;
+    using Core.Data;
     using Rainbow.Model;
 
     public class RainbowRenderingReader : RainbowReader<IRendering>, IRenderingReader

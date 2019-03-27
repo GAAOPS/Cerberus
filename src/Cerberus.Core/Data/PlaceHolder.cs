@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Data
+﻿namespace Cerberus.Core.Data
 {
     public class PlaceHolder : BaseItem, IPlaceHolder
     {

@@ -1,5 +1,7 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Analyzers
 {
+    using Core.Analyzers;
+
     public interface IRenderingAnalyzer : IHelixAnalyzer
     {
     }

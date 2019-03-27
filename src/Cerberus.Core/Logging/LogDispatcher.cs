@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Logging
+﻿namespace Cerberus.Core.Logging
 {
     using System;
     using System.Collections.Generic;

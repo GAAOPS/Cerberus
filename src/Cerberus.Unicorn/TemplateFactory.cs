@@ -1,13 +1,12 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Common.Configuration;
-    using Common.Data;
+    using Core.Configuration;
+    using Core.Data;
+    using Core.Sc;
     using Rainbow.Model;
-    using ValGuGuidator.Common.Sc;
-    using ValGuidator.Common.Sc;
 
     public class TemplateFactory
     {

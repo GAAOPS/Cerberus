@@ -1,9 +1,10 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers.Rules
+﻿namespace Cerberus.Rules
 {
     using System;
     using System.Collections.Generic;
-    using Configuration;
-    using Data;
+    using Core.Analyzers.Rules;
+    using Core.Configuration;
+    using Core.Data;
 
     public class TemplateFoundationNamingConvention : RuleWithErrorAction, ITemplateRule
     {

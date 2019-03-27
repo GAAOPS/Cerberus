@@ -1,6 +1,6 @@
-﻿namespace Sitecore.Helix.Validator.Unicorn
+﻿namespace Cerberus.Unicorn
 {
-    using Common;
+    using Core;
     using Rainbow;
     using Rainbow.Model;
 

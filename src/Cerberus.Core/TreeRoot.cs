@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common
+﻿namespace Cerberus.Core
 {
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;

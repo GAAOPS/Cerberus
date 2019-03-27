@@ -1,15 +1,15 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers
+﻿namespace Cerberus.Analyzers
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Configuration;
     using Configy;
     using Configy.Containers;
     using Configy.Parsing;
-    using Logging;
-    using Rules;
+    using Core.Analyzers;
+    using Core.Analyzers.Rules;
+    using Core.Configuration;
+    using Core.Logging;
 
     public sealed class HelixAnalyzerService : XmlContainerBuilder, IHelixAnalyzerService
     {

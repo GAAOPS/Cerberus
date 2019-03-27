@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Helix.Validator.Common.Configuration
+﻿namespace Cerberus.Core.Configuration
 {
     using Configy.Parsing;
 

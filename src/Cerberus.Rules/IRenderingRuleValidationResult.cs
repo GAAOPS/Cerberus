@@ -1,5 +1,7 @@
-﻿namespace Sitecore.Helix.Validator.Common.Analyzers.Rules
+﻿namespace Cerberus.Rules
 {
+    using Core.Analyzers.Rules;
+
     public interface IRenderingRuleValidationResult : IRuleValidationResult
     {
     }
