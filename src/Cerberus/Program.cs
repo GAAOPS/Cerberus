@@ -1,50 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cerberus
+﻿namespace Cerberus
 {
+    using System;
     using System.Diagnostics;
     using Core.Configuration;
     using NDesk.Options;
+    using Properties;
 
-    class Program
+    internal static class Program
     {
-        static int Main(string[] args)
+        private static int Main(string[] args)
         {
             PrintLogo();
             var configFilePath = "";
-            
+
             configFilePath = GetConfigFilePath(args);
             if (string.IsNullOrEmpty(configFilePath))
             {
                 ShowHelp();
+
                 return -1;
             }
 
-            if (!string.IsNullOrEmpty(configFilePath))
-            {
-                var stopwatch = Stopwatch.StartNew();
-                var cerberus = new ConfigInitializer(configFilePath);
-                var analyzeResults = cerberus.HelixAnalyzerService.Analyze();
-                stopwatch.Stop();
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"Analyzing took: {stopwatch.Elapsed.Seconds} seconds");
-                Console.WriteLine($"Count of applied Rules: {analyzeResults.Results.Count}");
-                var returnCode = cerberus.ExitCodePolicyService.GetExitCodePolicy(analyzeResults);
-                Console.WriteLine($"Exit code is: {returnCode}");
-                return returnCode;
-            }
+            var stopwatch = Stopwatch.StartNew();
+            var cerberus = new ConfigInitializer(configFilePath);
+            var analyzeResults = cerberus.HelixAnalyzerService.Analyze();
+            stopwatch.Stop();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"Analyzing took: {stopwatch.Elapsed.Seconds} seconds");
+            Console.WriteLine($"Count of applied Rules: {analyzeResults.Results.Count}");
+            var returnCode = cerberus.ExitCodePolicyService.GetExitCodePolicy(analyzeResults);
+            Console.WriteLine($"Exit code is: {returnCode}");
+            Console.ResetColor();
 
-            return -1;
+            return returnCode;
         }
 
         private static string GetConfigFilePath(string[] args)
         {
-            string configFilePath = "";
-            var optionSet = new OptionSet()
+            var configFilePath = "";
+            var optionSet = new OptionSet
             {
                 {
                     "c|config=", "path to the cerberus.config.",
@@ -53,7 +47,7 @@ namespace Cerberus
                 {
                     "h|help", "show help.",
                     v => ShowHelp()
-                },
+                }
             };
             try
             {
@@ -78,13 +72,10 @@ namespace Cerberus
 
         private static void PrintLogo()
         {
-            string s = Properties.Settings.Default.Cerberus;
+            var s = Settings.Default.Cerberus;
             Console.ForegroundColor = ConsoleColor.Red;
-            var z = Console.CursorSize;
-            Console.CursorSize = 1;
             Console.WriteLine(s);
             Console.ResetColor();
-
         }
     }
 }

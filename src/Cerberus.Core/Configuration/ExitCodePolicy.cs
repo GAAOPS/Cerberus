@@ -8,7 +8,7 @@
 
     public class ExitCodePolicy : IExitCodePolicy
     {
-        private RuleResult _failOn;
+        private readonly RuleResult _failOn;
 
         public ExitCodePolicy(string failOn)
         {
@@ -46,6 +46,7 @@
             {
                 return 0;
             }
+
             // everything else is Fail
             return 2;
         }
