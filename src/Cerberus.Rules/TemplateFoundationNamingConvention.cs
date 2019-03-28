@@ -12,7 +12,7 @@
         {
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule,
             List<IHelixLayerInfo> otherModule,
@@ -23,11 +23,11 @@
             if (currentLayer.Name.Equals("Foundation", StringComparison.InvariantCultureIgnoreCase) &&
                 !currentTemplate.Name.StartsWith("_"))
             {
-                return new TemplateRuleValidationResult(GetFailResult(),
+                return new RuleValidationResult(GetFailResult(),
                     $"The Template {currentTemplate} is not follows Foundation layer naming convention.");
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

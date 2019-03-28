@@ -12,7 +12,7 @@
         {
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, List<IHelixLayerInfo> otherModule,
             List<ITemplate> allTemplates,
@@ -38,24 +38,24 @@
                 }
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
 
-        private ITemplateRuleValidationResult AddField(ITemplate currentTemplate, HashSet<IField> fields,
+        private IRuleValidationResult AddField(ITemplate currentTemplate, HashSet<IField> fields,
             ITemplate baseTemplate)
         {
             foreach (var fld in currentTemplate.Fields)
             {
                 if (fields.Any(p => p.Name.Equals(fld.Name)))
                 {
-                    return new TemplateRuleValidationResult(GetFailResult(),
+                    return new RuleValidationResult(GetFailResult(),
                         $"Duplicate field name '{fld.Name}' detected between {currentTemplate} and {baseTemplate} .");
                 }
 
                 fields.Add(fld);
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

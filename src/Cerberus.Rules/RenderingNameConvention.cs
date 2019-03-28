@@ -11,7 +11,7 @@
         {
         }
 
-        public IRenderingRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer, KeyValuePair<string, IDataElement[]> currentModule,
             IRendering currentRendering)
         {
@@ -23,12 +23,12 @@
             {
                 if (currentRendering.Name.Contains("-"))
                 {
-                    return new RenderingRuleValidationResult(GetFailResult(),
+                    return new RuleValidationResult(GetFailResult(),
                         $"The Rendering {currentRendering} has illegal Character on its name.");
                 }
             }
 
-            return new RenderingRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

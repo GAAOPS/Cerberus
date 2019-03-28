@@ -7,7 +7,7 @@
 
     public interface IRenderingRule : IRule
     {
-        IRenderingRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
+        IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, IRendering currentRendering);
     }
 }

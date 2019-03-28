@@ -14,7 +14,7 @@
             _illegalChars = illegalChars;
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule,
             List<IHelixLayerInfo> otherModule,
@@ -29,13 +29,13 @@
                 {
                     if (currentTemplate.Name.IndexOf(c) > -1)
                     {
-                        return new TemplateRuleValidationResult(GetFailResult(),
+                        return new RuleValidationResult(GetFailResult(),
                             $"The Template {currentTemplate} has illegal Character on its name.");
                     }
                 }
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

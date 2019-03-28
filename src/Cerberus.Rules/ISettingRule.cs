@@ -7,7 +7,7 @@
 
     public interface ISettingRule : IRule
     {
-        ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
+        IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, IEnumerable<ISetting> allSettings,
             ISetting currentSetting);
     }

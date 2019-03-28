@@ -42,22 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRenderingRule.cs" />
-    <Compile Include="IRenderingRuleValidationResult.cs" />
     <Compile Include="ISettingRule.cs" />
-    <Compile Include="ITemplateDuplicateFieldAnalyzer.cs" />
     <Compile Include="ITemplateRule.cs" />
-    <Compile Include="ITemplateRuleValidationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderingDataSource.cs" />
     <Compile Include="RenderingNameConvention.cs" />
-    <Compile Include="RenderingRuleValidationResult.cs" />
     <Compile Include="SettingCrossModuleTemplateCheck.cs" />
     <Compile Include="TemplateCircularReference.cs" />
     <Compile Include="TemplateDuplicateFieldAnalyzer.cs" />
     <Compile Include="TemplateFoundationNamingConvention.cs" />
     <Compile Include="TemplateInheritance.cs" />
     <Compile Include="TemplateNamingConvention.cs" />
-    <Compile Include="TemplateRuleValidationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cerberus.Core\Cerberus.Core.csproj">

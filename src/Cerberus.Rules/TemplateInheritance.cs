@@ -15,7 +15,7 @@
             _allowInheritanceInsideSameModule = allowInheritanceInsideSameModule;
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, List<IHelixLayerInfo> otherModule,
             List<ITemplate> allTemplates,
@@ -29,19 +29,19 @@
                     var isInSameModule = currentModule.Value.Any(p => p.Id.Equals(conflictingTemplate.Id));
                     if (!isInSameModule)
                     {
-                        return new TemplateRuleValidationResult(GetFailResult(),
+                        return new RuleValidationResult(GetFailResult(),
                             $"Cross module template inheritance found between {currentTemplate} and {otherTemplates.FirstOrDefault(p => p.Id.Equals(conflictingTemplate.Id))}");
                     }
 
                     if (!_allowInheritanceInsideSameModule)
                     {
-                        return new TemplateRuleValidationResult(GetFailResult(),
+                        return new RuleValidationResult(GetFailResult(),
                             $"Template inheritance found between {currentTemplate} and {currentModule.Value.FirstOrDefault(p => p.Id.Equals(conflictingTemplate.Id))}");
                     }
                 }
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

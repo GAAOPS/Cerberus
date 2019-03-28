@@ -12,7 +12,7 @@
         {
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, List<IHelixLayerInfo> otherModule,
             List<ITemplate> allTemplates,
@@ -21,8 +21,8 @@
             var hasCircularReference = currentTemplate.BaseTemplates.Any(p => p.Equals(currentTemplate.Id));
             var result = GetFailResult();
             return !hasCircularReference
-                ? new TemplateRuleValidationResult(RuleResult.Success)
-                : new TemplateRuleValidationResult(result,
+                ? new RuleValidationResult(RuleResult.Success)
+                : new RuleValidationResult(result,
                     $"The template {currentTemplate} has circular reference.");
         }
     }

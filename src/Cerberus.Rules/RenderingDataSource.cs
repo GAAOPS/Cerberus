@@ -21,7 +21,7 @@
             _datasourceTemplate = datasourceTemplate;
         }
 
-        public IRenderingRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer, KeyValuePair<string, IDataElement[]> currentModule,
             IRendering currentRendering)
         {
@@ -33,17 +33,17 @@
             if (_datasourceLocation && datasourceLocation != null && !string.IsNullOrEmpty(datasourceLocation.Value) &&
                 datasourceLocation.Value.StartsWith("/"))
             {
-                return new RenderingRuleValidationResult(GetFailResult(),
+                return new RuleValidationResult(GetFailResult(),
                     $"DataSource Location is set to: {datasourceLocation.Value} for this rendering: {currentRendering}");
             }
 
             if (_datasourceTemplate && datasourceTemplate != null && !string.IsNullOrEmpty(datasourceTemplate.Value))
             {
-                return new RenderingRuleValidationResult(GetFailResult(),
+                return new RuleValidationResult(GetFailResult(),
                     $"DataSource Template is set to: {datasourceTemplate.Value} for this rendering: {currentRendering}");
             }
 
-            return new RenderingRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
     }
 }

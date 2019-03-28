@@ -13,7 +13,7 @@
         {
         }
 
-        public ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
+        public IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers,
             IHelixLayerInfo currentLayer, KeyValuePair<string, IDataElement[]> currentModule,
             IEnumerable<ISetting> allSettings, ISetting currentSetting)
         {
@@ -21,11 +21,11 @@
                 currentSetting.Template.Path.IndexOf(currentLayer.Name, StringComparison.InvariantCultureIgnoreCase) <
                 0 && !TemplateFromFoundation(currentSetting))
             {
-                return new TemplateRuleValidationResult(GetFailResult(),
+                return new RuleValidationResult(GetFailResult(),
                     $"Cross module template inheritance found for setting: {currentSetting} with the template: {currentSetting.Template}");
             }
 
-            return new TemplateRuleValidationResult(RuleResult.Success);
+            return new RuleValidationResult(RuleResult.Success);
         }
 
         private bool TemplateFromFoundation(ISetting currentSetting)

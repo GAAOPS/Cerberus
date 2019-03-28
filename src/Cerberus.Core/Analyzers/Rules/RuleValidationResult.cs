@@ -2,7 +2,7 @@
 {
     public class RuleValidationResult : IRuleValidationResult
     {
-        public RuleValidationResult(RuleResult result, string message)
+        public RuleValidationResult(RuleResult result, string message = "")
         {
             Result = result;
             Message = message;

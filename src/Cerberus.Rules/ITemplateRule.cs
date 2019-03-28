@@ -7,7 +7,7 @@
 
     public interface ITemplateRule : IRule
     {
-        ITemplateRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
+        IRuleValidationResult Validate(IEnumerable<IHelixLayerInfo> allLayers, IHelixLayerInfo currentLayer,
             KeyValuePair<string, IDataElement[]> currentModule, List<IHelixLayerInfo> otherModule,
             List<ITemplate> allTemplates, List<ITemplate> otherTemplates, ITemplate currentTemplate);
     }
