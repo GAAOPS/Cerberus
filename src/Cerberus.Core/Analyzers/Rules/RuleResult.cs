@@ -4,6 +4,7 @@
     {
         Success = 0,
         Warning = 1,
-        Fail = 2
+        Fail = 2,
+        None = 10
     }
 }

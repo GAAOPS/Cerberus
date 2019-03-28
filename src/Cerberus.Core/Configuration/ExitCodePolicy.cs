@@ -1,17 +1,21 @@
 ﻿namespace Cerberus.Core.Configuration
 {
     using System;
+    using System.ComponentModel;
     using System.Linq;
     using Analyzers;
     using Analyzers.Rules;
 
     public class ExitCodePolicy : IExitCodePolicy
     {
-        private readonly string _failOn;
+        private RuleResult _failOn;
 
         public ExitCodePolicy(string failOn)
         {
-            _failOn = failOn;
+            if (!Enum.TryParse(failOn, true, out _failOn))
+            {
+                throw new InvalidEnumArgumentException("Fail condition on export policy is not correct.");
+            }
         }
 
         public int GetExitCodePolicy(IAnalyzeResult result)
@@ -28,16 +32,20 @@
 
         private int GetPolicyResult(RuleResult result)
         {
-            if (_failOn.Equals("None", StringComparison.InvariantCultureIgnoreCase))
+            if (_failOn == RuleResult.None)
             {
                 return 0;
             }
 
-            if (_failOn.Equals("Warning", StringComparison.InvariantCultureIgnoreCase) && result == RuleResult.Warning)
+            if (_failOn == RuleResult.Warning && result == RuleResult.Warning)
             {
                 return 1;
             }
 
+            if (_failOn == RuleResult.Fail && result != RuleResult.Fail)
+            {
+                return 0;
+            }
             // everything else is Fail
             return 2;
         }
